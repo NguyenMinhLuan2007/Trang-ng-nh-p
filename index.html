@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">    
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Giao Diện Đăng Nhập </title>
+    <style>
+        /* Định nghĩa để trang chạy ra màn hình chính giữa */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Khung viền màu xanh lá ngoài cùng */
+        .outer-border {
+            border: 15px solid #008000; /* viền xanh lá dầy */
+            padding: 30px 25px;          /* khoảng cách giữa viền và nội dung */
+            background-color: #4daebb;   /* màu nền */
+            width: 100%;                 
+            max-width: 400px;            /* SỬA TẠI ĐÂY: Giới hạn chiều rộng để form gom vào giữa */
+            box-sizing: border-box;
+            border-radius: 8px;          /* Thêm bo góc nhẹ cho đẹp hơn (tùy chọn) */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Thêm đổ bóng (tùy chọn) */
+        }
+
+        /* Tiêu đề đăng nhập */
+        .form-title {
+            font-family: "Times New Roman", Times, serif; /* Sửa lỗi chính tả Time -> Times */
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 25px;
+            color: #000000;
+            text-align: center;          /* Thêm căn giữa tiêu đề (tùy chọn) */
+        }
+
+        /* Khung bao bọc mỗi nhóm input */
+        .input-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column-reverse; /* đảo ngược để ô input nằm trên */
+        } 
+
+        /* Định dạng ô nhập liệu */
+        .input-group input {
+            width: 100%;                 /* SỬA TẠI ĐÂY: Đổi từ 100px thành 100% để vừa vặn khung form */
+            padding: 10px;               /* Tăng padding một chút cho dễ bấm */
+            font-size: 16px;
+            border: 2px solid #131212;
+            border-bottom: 3px solid #bd0000; /* đường gạch dưới màu đỏ */
+            outline: none;
+            box-sizing: border-box;
+            background-color: #ffffff;
+        }
+
+        /* Định dạng nhãn text bên dưới ô nhập */
+        .input-group label {
+            font-size: 14px;
+            margin-top: 5px;             /* tạo khoảng cách */
+            color: #000000;
+        }
+
+        /* Chọn giới tính */
+        .options-group {
+            margin-top: 20px;
+            margin-bottom: 25px;
+            font-size: 15px;
+            line-height: 1.6;            /* tăng khoảng cách dòng giữa các lựa chọn */
+        }
+
+        .options-group label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+
+        /* Thêm khoảng cách nhỏ giữa các nút chọn */
+        .options-group input {
+            margin-right: 8px;
+        }
+
+        /* Nút bấm đăng nhập */
+        .btn-submit {
+            background-color: #00a86b;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;                 /* Thêm chiều rộng 100% cho nút bấm cân xứng (tùy chọn) */
+        }
+
+        /* Hiệu ứng khi rê chuột */
+        .btn-submit:hover {
+            background-color: #008f5d;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-border">
+        <div class="form-title">Đăng nhập</div>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="username"><strong>Tên đăng nhập</strong></label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password"><strong>Mật khẩu</strong></label>
+                <!-- SỬA TẠI ĐÂY: Xóa dấu cách thừa trong type="password" -->
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="options-group">
+                <label>
+                    <input type="radio" name="gender" value="nam" checked> Nam
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="nu"> Nữ
+                </label>
+                <label style="margin-top: 8px;">
+                    <input type="checkbox" name="remember"> Lưu giá trị đăng Nhập
+                </label>
+            </div>
+            <button type="submit" class="btn-submit"> Đăng nhập</button>
+        </form>
+    </div>
+</body>
+</html>
